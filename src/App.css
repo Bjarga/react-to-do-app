@@ -1,0 +1,83 @@
+/* App page */
+* {
+  margin: 0;
+}
+.center-page-container {
+  margin: 20px auto 0 auto;
+}
+
+h2 {
+  color: rgb(5, 43, 86);
+  text-align: center;
+  margin-bottom: 10px;
+}
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.list-container {
+  width: 60%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.submitBtn {
+  background-color: white;
+  border: 2px solid #ed6c02;
+  color: #ed6c02;
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 20px auto 20px 25px;
+}
+
+/* todo form */
+
+.listItem {
+  list-style: none;
+  margin-bottom: 10px;
+  border-bottom: solid 1px rgb(215, 216, 221);
+  color: gray;
+}
+
+.delete-btn {
+  background-color: white;
+  border: 2px solid #ed0202;
+  color: #ed0202;
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 0 auto 30px 10px;
+}
+
+.edit-btn {
+  background-color: white;
+  border: 2px solid #0254ed;
+  color: #0254ed;
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 0 10px 30px auto;
+}
+
+.btn-container {
+  display: flex;
+}
+.modal-btn {
+  background-color: white;
+  border: 2px solid grey;
+  color: grey;
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 20px auto;
+}
+
+.form-container {
+  padding: 40px;
+}
