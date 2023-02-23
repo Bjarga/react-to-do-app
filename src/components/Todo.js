@@ -1,33 +1,24 @@
-import React, { useState } from "react";
-import "../App.css";
+import React from "react";
 
-const Todo = ({ todo, handleDelete, handleUpdate }) => {
-  const [done, setDone] = useState(false);
+import { useDispatch } from "react-redux";
+import { DELETE_TODO } from "../store/actionType";
 
-  const handleDone = () => {
-    if (done === false) {
-      return setDone(true);
-    } else if (done === true) {
-      return setDone(false);
-    }
+const Todo = ({ todo, handleUpdate }) => {
+  const dispatch = useDispatch();
+
+  const handleDelete = (id) => {
+    dispatch({ type: DELETE_TODO, payload: id });
   };
 
   return (
-    <ul>
-      <li className="listItem" style={done === true ? { textDecoration: "line-through" } : { textDecoration: "none" }}>
-        {todo.content}
-      </li>
-
-      <button className="edit-btn" onClick={() => handleUpdate(todo)}>
-        edit
-      </button>
-      <button className="delete-btn" onClick={() => handleDelete(todo.id)}>
-        delete
-      </button>
-      <button className="delete-btn" onClick={handleDone}>
-        Done
-      </button>
-    </ul>
+    <li className="list-item">
+      <h4>{todo.text}</h4>
+      <p>{todo.description}</p>
+      <div className="btn-container">
+        <button className="edit-btn" onClick={() => handleUpdate(todo)}></button>
+        <button className="delete-btn" onClick={() => handleDelete(todo.id)}></button>
+      </div>
+    </li>
   );
 };
 

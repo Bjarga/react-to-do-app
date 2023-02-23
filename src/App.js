@@ -4,13 +4,12 @@ import Todo from "./components/Todo";
 import { useDispatch, useSelector } from "react-redux";
 import TodoForm from "./components/TodoForm";
 import { DELETE_TODO } from "./store/actionType";
-import ReduxProvider from "./store/ReduxProvider";
 
 function App() {
   const [open, setOpen] = useState(false);
   const [updateData, setUpdateData] = useState(null);
 
-  const todos = useSelector((state) => state.todos);
+  const todos = useSelector((state) => state.todos); // Update this line
   const dispatch = useDispatch();
 
   const handleOpen = () => {
@@ -31,23 +30,21 @@ function App() {
   };
 
   return (
-    <ReduxProvider>
-      <div className="center-page-container">
-        <div className="App">
-          <h2>To-Do-List</h2>
-          <button className="submitBtn" onClick={handleOpen}>
-            Add to List
-          </button>
+    <div className="center-page-container">
+      <div className="App">
+        <h2>To-Do-List</h2>
+        <button className="submitBtn" onClick={handleOpen}>
+          Add to List
+        </button>
 
-          <TodoForm open={open} handleClose={handleClose} todo={updateData} />
-          <ul className="list-container">
-            {todos.map((todo, index) => (
-              <Todo key={index} todo={todo} handleDelete={handleDelete} handleUpdate={handleUpdate} />
-            ))}
-          </ul>
-        </div>
+        <TodoForm open={open} handleClose={handleClose} todo={updateData} />
+        <ul className="list-container">
+          {todos.map((todo, index) => (
+            <Todo key={index} todo={todo} handleDelete={handleDelete} handleUpdate={handleUpdate} />
+          ))}
+        </ul>
       </div>
-    </ReduxProvider>
+    </div>
   );
 }
 
